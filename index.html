@@ -5,22 +5,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
 
-<script src="https://kit.fontawesome.com/bc48570f30.js" crossorigin="anonymous"></script>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
-
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Arial", sans-serif;}
-a{ text-decoration:none; }
-a:hover { text-decoration:underline; }
-
-.tingle { font-family: 'Josefin Sans', sans-serif; }
-
-</style>
 
 </head>
 
@@ -33,17 +24,18 @@ a:hover { text-decoration:underline; }
 </div>
 
 <div class="w3-row w3-padding-64">
-    <div class="w3-container w3-third"></div>
+    <div class="w3-container w3-col w3-hide-small m3 l4"></div>
     <div class="w3-container w3-col s12 m6 l4 w3-center">
         <h1 class="w3-jumbo w3-wide tingle">Tingle</h1>
 
         <form class="w3-container w3-center" action="search.html">
-            <input class="w3-input w3-border w3-round-xxlarge" type="text" placeholder="&#x1f50d;&#xFE0E;" name="q">
+            <input class="w3-input w3-border w3-round-xxlarge" type="text" placeholder="&#x1f50d;&#xFE0E;" id="query" name="q">
             <p> <input class="w3-btn w3-round w3-light-grey w3-large" type="submit" value="Tingle-søgning"> </p>
         </form>
 
     </div>
 </div>
+
 </div>
 
 <script>

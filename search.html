@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<title>Tingle</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+</head>
+
+<body>
+
+<div class="w3-row w3-padding w3-margin-top w3-border-bottom">
+    <div class="w3-container w3-col s12 m12 l1 w3-center">
+        <a class="tingle w3-xxlarge" href="/">Tingle</a>
+    </div>
+    <div class="w3-container w3-col s12 m12 l4">
+        <form>
+        <input class="w3-input w3-border w3-round-xxlarge" type="text" placeholder="&#x1f50d;&#xFE0E;" id="query" name="q">
+        </form>
+    </div>
+    <div class="w3-container w3-col l5 w3-hide-small w3-hide-medium"></div>
+</div>
+
+<div class="w3-main">
+
+<div class="w3-row w3-padding">
+    <div class="w3-container w3-col w3-hide-small w3-hide-medium l1"></div>
+    <div class="w3-container w3-col s12 m12 l4" id="results">
+        <p w3-repeat="results">{{result}}</p>
+    </div>
+</div>
+
+</div>
+
+<script>
+var url = new URL(window.location.href);
+var query = url.searchParams.get("q");
+document.getElementById("query").value = query;
+
+var myObject = {results: [
+    {result: "Hej"},
+    {result: "med"},
+    {result: "dig"}
+]};
+w3.displayObject("results", myObject);
+
+</script>
+
+</body>
+</html>
