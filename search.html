@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/sql-wasm.js" integrity="sha512-14M7CqWNUr6fzrgs9ncNWKdBtLu69HwEWq7J3/dPMUL+za3fBRLJvK6egAu4SSlxCM1apqsbVJHArGLl5fjldw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
 
 </head>
 
@@ -34,53 +34,16 @@
 
 <div class="w3-row w3-padding">
     <div class="w3-container w3-col w3-hide-small w3-hide-medium l1"></div>
-    <div class="w3-container w3-col s12 m12 l4" id="results">
-        <p w3-repeat="results">{{result}}</p>
+    <div class="w3-container w3-col s12 m12 l4">
+        <div class="w3-panel w3-pale-red w3-leftbar w3-border-red" style="display:none" id="advarsel">
+            <h1>Advarsel</h1>
+            <p>Der er et problem med forbindelsen til serveren. Prøv igen senere.</p>
+        </div> 
+        <div id="results"></div>
     </div>
 </div>
 
 </div>
-
-<script>
-var url = new URL(window.location.href);
-var query = url.searchParams.get("q");
-document.getElementById("query").value = query;
-
-var myObject = {results: [
-    {result: "Hej"},
-    {result: "med"},
-    {result: "dig"}
-]};
-w3.displayObject("results", myObject);
-
-var key = "24mnMIv6lAJ4pz2nck8j3870sXA";
-
-var dburl = "https://api.dbhub.io/v1/query"
-
-
-
-async function loadDB() {
-    //const initSqlJs = window.initSqlJs;
-    const SQL = await initSqlJs({
-        locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.1/sql-wasm.wasm`
-    });
-    const db = new SQL.Database();
-    let sqlstr = "CREATE TABLE hello (a int, b char); \
-    INSERT INTO hello VALUES (0, 'hello'); \
-    INSERT INTO hello VALUES (1, 'world');";
-    db.run(sqlstr);
-    console.log(db.exec("SELECT * FROM hello"));
-    return db;
-}
-
-var db = (async function () {
-    const db = await loadDB();
-    return db;
-})()
-
-
-
-</script>
 
 </body>
 </html>
